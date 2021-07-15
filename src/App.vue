@@ -8,7 +8,7 @@
             alert(searchString)
           }
         -->
-      <Main :characters="filteredCharacters" />
+      <Main :inputSearch="inputSearch" :characters="filteredCharacters" />
     </div>
   </div>
 </template>

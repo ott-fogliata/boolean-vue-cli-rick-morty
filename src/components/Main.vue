@@ -6,6 +6,7 @@
         :origin='character.origin'
         :species='character.species'
         :image='character.image'
+        :inputSearch="inputSearch"
         />    
     </div>    
 </template>
@@ -21,7 +22,8 @@ export default {
         Character
     },
     props: {
-        characters: Array
+        characters: Array,
+        inputSearch: String
     }
 }
 </script>

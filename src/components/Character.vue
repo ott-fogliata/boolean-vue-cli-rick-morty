@@ -2,7 +2,7 @@
     <div class="character-container">
         <div class="inner">
             <img :src="image" :alt="`image of ${name}`" />
-            <div class="name">{{name}}</div>
+            <div class="name" v-html="nameHtml"/>
             <div class="line"/>
             <div class="origin">{{origin}}</div>
             <div class="species">{{species}}</div>
@@ -18,7 +18,19 @@ export default {
         name: String,
         origin: String,
         species: String,
-        image: String
+        image: String,
+        inputSearch: String
+    },
+    computed: {
+        nameHtml() {
+            const search = this.inputSearch.toLowerCase()
+
+            if(this.name.toLowerCase().includes(search)) {
+                return this.name.replace(search, `<span style="background:yellow">${search}</span>`)
+            }
+
+            return this.name
+        }
     }
 }
 </script>
@@ -39,6 +51,7 @@ export default {
 
         .name {
             font-size: 24px;
+
         }
 
         .line {
