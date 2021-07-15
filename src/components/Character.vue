@@ -23,6 +23,8 @@ export default {
     },
     computed: {
         nameHtml() {
+            // piccolo hack per evidenziare la parte ricercata dall'utente all'interno del name.
+
             const search = this.inputSearch.toLowerCase()
 
             if(this.name.toLowerCase().includes(search)) {
